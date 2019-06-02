@@ -1,30 +1,26 @@
-import { compose } from 'ramda'
+import { applySpec, compose, pathOr} from 'ramda'
 import { withProps, withHandlers } from 'recompose'
-import { fetchUser } from 'db'
 import withApolloClient from 'hoc/withApolloClient'
 import withLoading from 'hoc/withLoading'
 import { graphql } from 'react-apollo'
 import query from './query'
+
+const userSpec = applySpec({
+
+})
 
 export default compose(
   withApolloClient,
   graphql(
     query
   ),
-  // withProps(({ navigation: { getParam }}) => ({ 
-  //   user: fetchUser(
-  //     getParam('userId', 1)
-  //   )
-  // })),
   withLoading,
-  withProps(({ data }) => {
-    console.log(data)
-    if(data.user){
-      return { user: data.user }
-    }
-
-    return { user: {} }
-  }),
+  withProps(
+    applySpec({
+      user: pathOr({}, ['data', 'user']),
+      posts: pathOr([], ['data', 'user', 'posts'] )
+    })
+  ),
   withHandlers({
     handleNavigateToImageDetail: ({
        navigation: { navigate }, user

@@ -15,20 +15,20 @@ const styles = StyleSheet.create({
 })
 
 
-export default function ImageGallery({ images, handleNavigateToImageDetail }) {
+export default function ImageGallery({ posts, handleNavigateToImageDetail }) {
   return (
     <View style={styles.container}>
       {
-       images.map(
-         (image, idx) => 
+       posts.map(
+         (post, idx) => 
            <TouchableOpacity
              key={idx}
-             onPress={() =>  handleNavigateToImageDetail(image)}>
+             onPress={() =>  handleNavigateToImageDetail(post)}>
              <Thumbnail 
                large
                square 
-               style={styles.image}
-               source={{ uri: image.download_url}}/>
+               style={styles.post}
+               source={{ uri: post.imageUrl}}/>
            </TouchableOpacity>
        ) 
       }

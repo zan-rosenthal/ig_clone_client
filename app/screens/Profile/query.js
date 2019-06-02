@@ -6,6 +6,11 @@ export default gql`
       id
       userName
       fullName
+      posts {
+        id
+        imageUrl
+        location
+      }
     }
   }
 `
