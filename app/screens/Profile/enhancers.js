@@ -1,5 +1,5 @@
 import { compose } from 'ramda'
-import { withProps } from 'recompose'
+import { withProps, withHandlers } from 'recompose'
 import { fetchUser } from 'db'
 
 export default compose(
@@ -7,5 +7,10 @@ export default compose(
     user: fetchUser(
       getParam('userId', 1)
     )
-  }))
+  })),
+  withHandlers({
+    handleNavigateToImageDetail: ({
+       navigation: { navigate }
+    }) => (image) => navigate('ImageDetail', { image })
+  })
 )

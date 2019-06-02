@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export default function Profile({ user }) {
+export default function Profile({ user, handleNavigateToImageDetail }) {
   return (
     <Container style={styles.container}>
       <Header text={user.userName} />
@@ -60,7 +60,7 @@ export default function Profile({ user }) {
            {user.profileIntro}
           </Text>
         </View>
-        <Gallery />
+        <Gallery handleNavigateToImageDetail={handleNavigateToImageDetail}/>
       </Content>
       <Footer style={styles.footer} />
     </Container>

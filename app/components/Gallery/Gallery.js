@@ -1,7 +1,6 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, TouchableOpacity, } from 'react-native'
 import { Thumbnail } from 'native-base'
-import { Row, Grid } from "react-native-easy-grid";
 
 const styles = StyleSheet.create({
   container: {
@@ -16,19 +15,26 @@ const styles = StyleSheet.create({
 })
 
 
-export default function ImageGallery({ images }) {
+export default function ImageGallery({ images, handleNavigateToImageDetail }) {
   return (
     <View style={styles.container}>
       {
        images.map(
          (image, idx) => 
-          <Thumbnail 
-            large
-            square 
-            key={idx}
-            style={styles.image}
-            source={{ uri: image.download_url}}
-            />
+           <TouchableOpacity
+             key={idx}
+             onPress={
+               () => {
+                 console.log('pressed', image)
+                 return handleNavigateToImageDetail(image)
+               }
+             }>
+             <Thumbnail 
+               large
+               square 
+               style={styles.image}
+               source={{ uri: image.download_url}}/>
+           </TouchableOpacity>
        ) 
       }
     </View>

@@ -7,7 +7,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 const MainNavigator = createStackNavigator({
   Profile: { screen: Profile, params: { userId: 1 } },
-  ImageDetail: { screen: ImageDetail}
+  ImageDetail: { screen: ImageDetail }
 },{
   initialRouteName: 'Profile'
 });
