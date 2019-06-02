@@ -1,15 +1,4 @@
-import React from 'react'
-import { Container, Content, Footer, Text } from 'native-base';
-import Header from 'components/Header'
+import enhance from './enhancers'
+import ImageDetail from './ImageDetail'
 
-export default function ImageDetail() {
-  return (
-    <Container>
-      <Header text="ImageTitle" />
-      <Content>
-        <Text>An image detail here for ya</Text>
-      </Content>
-      <Footer></Footer>
-    </Container>
-  )
-}
+export default enhance(ImageDetail)

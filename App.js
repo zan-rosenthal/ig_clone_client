@@ -1,7 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Profile from 'screens/Profile/index.js'
-import ImageDetail from 'screens/ImageDetail/index.js'
+import Profile from 'screens/Profile'
+import ImageDetail from 'screens/ImageDetail'
 
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 

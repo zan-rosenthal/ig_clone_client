@@ -23,12 +23,7 @@ export default function ImageGallery({ images, handleNavigateToImageDetail }) {
          (image, idx) => 
            <TouchableOpacity
              key={idx}
-             onPress={
-               () => {
-                 console.log('pressed', image)
-                 return handleNavigateToImageDetail(image)
-               }
-             }>
+             onPress={() =>  handleNavigateToImageDetail(image)}>
              <Thumbnail 
                large
                square 

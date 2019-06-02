@@ -5,17 +5,17 @@ import InfoGroup from './InfoGroup'
 
 const styles = StyleSheet.create({
   container: {
+    flex: 3,
     height: '100%',
-    justifyContent: 'center',
-    marginLeft: 20,
-    paddingTop: 20,
-    flex: 3
+    justifyContent: 'space-between',
+    marginLeft: 10,
+    padding: 10,
   },
   editBtn: {
     alignItems: 'center',
-    flex: 1,
+    height: 35,
+    marginTop: 20,
     padding: 5,
-    height: 20,
     justifyContent: 'center',
     width: '100%'
   },

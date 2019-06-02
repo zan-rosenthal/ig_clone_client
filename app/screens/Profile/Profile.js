@@ -6,20 +6,20 @@ import Header from 'components/Header'
 import Gallery from 'components/Gallery'
 
 const styles = StyleSheet.create({
+  body: {
+    flex: 1
+  },
   container: {
     width: '100%',
     height: '100%'
-  },
-  body: {
-    flex: 1
   },
   footer: {
     backgroundColor: 'white',
     height: 20
   },
   profileMeta: {
+    flex: 1,
     flexDirection: 'row',
-    height: '15%',
     padding: 10,
     width: '100%',
   },
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   metaInfo: {
-    flex: 3,
+    flex: 1,
     flexDirection: 'row',
     marginLeft: 20
   },
@@ -51,7 +51,9 @@ export default function Profile({ user, handleNavigateToImageDetail }) {
       <Header text={user.userName} />
       <Content style={styles.body}>
         <View style={styles.profileMeta}>
-          <Thumbnail large source={{ uri: "https://fillmurray.com/200/300" }} />
+          <Thumbnail 
+            large 
+            source={{ uri: "https://fillmurray.com/100/100" }} />
           <ProfileMeta style={styles.metaInfo} />
         </View>
         <View style={styles.profileIntro}>

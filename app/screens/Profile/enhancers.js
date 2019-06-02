@@ -10,7 +10,7 @@ export default compose(
   })),
   withHandlers({
     handleNavigateToImageDetail: ({
-       navigation: { navigate }
-    }) => (image) => navigate('ImageDetail', { image })
+       navigation: { navigate }, user
+    }) => (image) => navigate('ImageDetail', { image, user })
   })
 )
