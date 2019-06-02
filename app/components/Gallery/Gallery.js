@@ -21,7 +21,7 @@ export default function ImageGallery({ images }) {
     <View style={styles.container}>
       {
        images.map(
-         (image) => 
+         (image, idx) => 
           <Thumbnail 
             large
             square 
